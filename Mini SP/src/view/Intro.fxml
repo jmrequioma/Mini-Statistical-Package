@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane onKeyPressed="#handle" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.IntroController">
+   <children>
+      <Label layoutX="94.0" layoutY="48.0" text="Mini-Statistical Package (Mini-SP)">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="txtA" editable="false" layoutX="26.0" layoutY="164.0" onKeyPressed="#handle" prefHeight="312.0" prefWidth="548.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </TextArea>
+      <Label layoutX="177.0" layoutY="94.0" text="Gamma Basic Statistics Calculator">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
