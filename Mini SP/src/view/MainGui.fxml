@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane onKeyPressed="#handle" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainGuiController">
+   <children>
+      <Label layoutX="116.0" onKeyPressed="#handle" layoutY="51.0" text="Gamma Basic Statistics Calculator">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="256.0" layoutY="382.0" onKeyPressed="#handle" text="Press 1, 2, 3, or 4" />
+      <Label layoutX="165.0" layoutY="178.0" onKeyPressed="#handle" text="1.) Simulating Different Types of Sampling Techniques" />
+      <Label layoutX="204.0" layoutY="221.0" onKeyPressed="#handle" text="2.) Summarizing and Presenting Data" />
+      <Label layoutX="238.0" layoutY="263.0" onKeyPressed="#handle" text="3.) Descriptive Statistics" />
+      <Label layoutX="281.0" layoutY="304.0" onKeyPressed="#handle" text="4.) Quit" />
+   </children>
+</AnchorPane>

@@ -14,6 +14,37 @@ public class Main extends Application {
 			Parent root = FXMLLoader.load(getClass().getResource("/view/Intro.fxml"));
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("/theme/bloodcrimson.css").toExternalForm());
+			/*
+			scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+				@Override
+				public void handle(KeyEvent ke)
+			    {
+			        if (ke.getCode().equals(KeyCode.ENTER))
+			        {
+			        	System.out.println("hello1");
+			        	try {
+			    			Parent root = FXMLLoader.load(getClass().getResource("/view/MainGui.fxml"));
+			    			Scene scene = new Scene(root);
+			    			scene.getStylesheets().add(getClass().getResource("/theme/bloodcrimson.css").toExternalForm());
+			    			scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+			    				@Override
+			    				public void handle(KeyEvent ke)
+			    			    {
+			    			        if (ke.getCode().equals(KeyCode.ENTER))
+			    			        {
+			    			        	System.out.println("hello2");
+			    			        }
+			    			    }
+			    			});
+			    		} catch(Exception e) {
+			    			e.printStackTrace();
+			    		}
+			        }
+			    }
+			});
+			*/
+			primaryStage.setTitle("Gamma Basic Statistics Calculator");
+			primaryStage.setResizable(false);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
