@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="controller.simulating.MenuController">
+   <children>
+      <Label layoutX="30.0" layoutY="36.0" text="Simulating Different Types of Sampling Techniques" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn1" layoutX="224.0" layoutY="177.0" mnemonicParsing="false" onAction="#btnClick" text="Simple Random Sampling" />
+      <Button fx:id="btn2" layoutX="238.0" layoutY="238.0" mnemonicParsing="false" onAction="#btnClick" text="Systematic Sampling" />
+      <Button fx:id="btn3" layoutX="242.0" layoutY="296.0" mnemonicParsing="false" onAction="#btnClick" text="Stratified Sampling" />
+      <Button fx:id="btnQuit" layoutX="281.0" layoutY="348.0" mnemonicParsing="false" onAction="#btnClick" text="Quit" />
+   </children>
+</AnchorPane>
