@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="327.0" prefWidth="551.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.summarizing.NumericalTableController">
+   <children>
+      <TableView fx:id="numericalData" prefHeight="327.0" prefWidth="551.0">
+        <columns>
+          <TableColumn fx:id="classLimit" prefWidth="75.0" text="CL" />
+          <TableColumn fx:id="trueClassLimit" prefWidth="75.0" text="TRUE CL" />
+            <TableColumn fx:id="midpoint" prefWidth="75.0" text="MIDPOINTS" />
+            <TableColumn fx:id="frequency" prefWidth="75.0" text="FREQ" />
+            <TableColumn fx:id="percentage" prefWidth="75.0" text="\%" />
+            <TableColumn fx:id="cumulativeFrequency" prefWidth="75.0" text="CF" />
+            <TableColumn fx:id="cumulativePercentage" prefWidth="75.0" text="C%" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</AnchorPane>
