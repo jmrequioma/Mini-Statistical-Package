@@ -14,9 +14,13 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.event.ActionEvent;
+import javax.swing.JFrame;
 
-public class MainGuiController implements Initializable {
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+
+public class MainGuiController extends Application {
 	@FXML
 	private Label lbl1;
 	@FXML
@@ -31,7 +35,7 @@ public class MainGuiController implements Initializable {
         	System.out.println("hello4");
         	try {
         		System.out.println("hello5");
-    			Parent root = FXMLLoader.load(getClass().getResource("/view/MainGui.fxml"));
+    			Parent root = FXMLLoader.load(getClass().getResource("/view/descripitve/MainGui.fxml"));
     			Scene scene = new Scene(root);
     			scene.getStylesheets().add(getClass().getResource("/theme/bloodcrimson.css").toExternalForm());
     			Stage stage = (Stage) lbl1.getScene().getWindow();
@@ -42,12 +46,34 @@ public class MainGuiController implements Initializable {
     		} catch(Exception e) {
     			e.printStackTrace();
     		}
+        } else if (ke.getCode().equals(KeyCode.DIGIT3)) {   // descriptive
+        	try {
+    			Parent root = FXMLLoader.load(getClass().getResource("/view/descriptive/Menu.fxml"));
+    			Scene scene = new Scene(root);
+    			scene.getStylesheets().add(getClass().getResource("/theme/bloodcrimson.css").toExternalForm());
+    			scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+    				@Override
+    				public void handle(KeyEvent ke)
+    			    {
+    			        if (ke.getCode().equals(KeyCode.DIGIT1))
+    			        {
+    			        	System.out.println("hello2");
+    			        }
+    			    }
+    			});
+    			Stage stage = (Stage) lbl1.getScene().getWindow();
+    			stage.setTitle("Descriptive Statistics");
+    			stage.setScene(scene);
+    			stage.setResizable(false);
+    			stage.show();
+    		} catch(Exception e) {
+    			e.printStackTrace();
+    		}
         }
     }
 
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void start(Stage arg0) throws Exception {
 		// TODO Auto-generated method stub
-		
 	}
 }

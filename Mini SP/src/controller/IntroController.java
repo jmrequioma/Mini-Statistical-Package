@@ -57,6 +57,29 @@ public class IntroController implements Initializable {
     			    		} catch(Exception e) {
     			    			e.printStackTrace();
     			    		}
+    			        } else if (ke.getCode().equals(KeyCode.DIGIT3)) {   // descriptive
+    			        	try {
+    			    			Parent root = FXMLLoader.load(getClass().getResource("/view/descriptive/Menu.fxml"));
+    			    			Scene scene = new Scene(root);
+    			    			scene.getStylesheets().add(getClass().getResource("/theme/bloodcrimson.css").toExternalForm());
+    			    			scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+    			    				@Override
+    			    				public void handle(KeyEvent ke)
+    			    			    {
+    			    			        if (ke.getCode().equals(KeyCode.DIGIT1))
+    			    			        {
+    			    			        	System.out.println("hello2");
+    			    			        }
+    			    			    }
+    			    			});
+    			    			Stage stage = new Stage();
+    			    			//stage.setTitle("Menu");
+    			    			stage.setScene(scene);
+    			    			stage.setResizable(false);
+    			    			stage.show();
+    			    		} catch(Exception e) {
+    			    			e.printStackTrace();
+    			    		}
     			        } else if (ke.getCode().equals(KeyCode.DIGIT4)) {
     			        	System.exit(0);
     			        }
