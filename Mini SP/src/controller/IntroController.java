@@ -44,6 +44,11 @@ public class IntroController implements Initializable {
     			    			Parent root = FXMLLoader.load(getClass().getResource("/view/simulating/Menu.fxml"));
     			    			Scene scene = new Scene(root);
     			    			scene.getStylesheets().add(getClass().getResource("/theme/bloodcrimson.css").toExternalForm());
+    			    			Stage stage = new Stage();
+    			    			//stage.setTitle("Menu");
+    			    			stage.setScene(scene);
+    			    			stage.setResizable(false);
+    			    			stage.show();
     			    		} catch(Exception e) {
     			    			e.printStackTrace();
     			    		}
