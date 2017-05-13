@@ -1,24 +1,24 @@
 package controller.simulating;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
-import main.Data;
-import javafx.event.ActionEvent;
-
 import javafx.scene.control.Label;
-
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
+import main.Data;
 import main.MainFields3;
+import main.Stratified;
 
 public class DataController implements Initializable {
 	@FXML
@@ -43,6 +43,25 @@ public class DataController implements Initializable {
 			}
 		} else {
 			// display for stratified sample - this is already grouped to stratas
+			Stratified stratified = new Stratified(MainFields3.getSamplingFrame(), MainFields3.getSamplingFrame().size(), MainFields3.getDataType());
+			List<List<Data>> stratas = stratified.getStrata();
+			displayStratas(stratas);
+		}
+	}
+	
+	private void displayStratas(List<List<Data>> stratas) {
+		for(int i = 0; i < stratas.size(); i++) {
+			txtASampleData.appendText("Strata No. " + (i + 1) + "\n");
+		
+			for (Data data : stratas.get(i)) {
+				if (MainFields3.getDataType().equals("Integer")) {
+					txtASampleData.appendText("{Index: " + (data.getIndex() + 1) + " ; Data: " + data.getDataInteger() + "} ");
+				} else {
+					txtASampleData.appendText("{Index: " + (data.getIndex() + 1) + " ; Data: " + data.getDataCharacter() + "} ");
+				}
+			}
+			
+			txtASampleData.appendText("\n\n-----------------------------------------------------------------------------------------------------------------\n\n");
 		}
 	}
 	

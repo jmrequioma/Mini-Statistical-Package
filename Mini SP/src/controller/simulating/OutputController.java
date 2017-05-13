@@ -16,6 +16,7 @@ import main.Systematic;
 import main.Stratified;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import main.Data;
@@ -101,6 +102,19 @@ public class OutputController {
 					}
 				}
 				*/
+				
+				// sampleSize is referred to as sampleSizePercent
+				if(sampleSize > 0 && sampleSize < 100) { 
+					Stratified stratified = new Stratified(samplingFrame, samplingFrame.size(), sampleSize, dataType);
+					List<List<Data>> randomData = stratified.getRandom();
+					displayStratas(randomData);
+				} else {
+					Alert alert = new Alert(AlertType.ERROR);
+					alert.setTitle("Critical Error");
+					alert.setHeaderText("Invalid Input!!!");
+					alert.setContentText("Ooops, input is not allowed! Please change the input.");
+					alert.showAndWait();
+				}
 			}
 			
 		} catch (NumberFormatException nfe) {
@@ -157,6 +171,22 @@ public class OutputController {
 			}
 		}
 		
+	}
+	
+	private void displayStratas(List<List<Data>> stratas) {
+		for(int i = 0; i < stratas.size(); i++) {
+			txtADisplay.appendText("Strata No. " + (i + 1) + "\n");
+		
+			for (Data data : stratas.get(i)) {
+				if (MainFields3.getDataType().equals("Integer")) {
+					txtADisplay.appendText("{Index: " + (data.getIndex() + 1) + " ; Data: " + data.getDataInteger() + "} ");
+				} else {
+					txtADisplay.appendText("{Index: " + (data.getIndex() + 1) + " ; Data: " + data.getDataCharacter() + "} ");
+				}
+			}
+			
+			txtADisplay.appendText("\n\n----------------------------------------------------------------------------------------------------------------\n\n");
+		}
 	}
 	
 	@FXML
