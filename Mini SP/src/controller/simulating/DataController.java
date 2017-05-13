@@ -33,12 +33,16 @@ public class DataController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		lblTitle.setText("The Sampling Frame");
-		for (Data data : MainFields3.getSamplingFrame()) {
-			if (MainFields3.getDataType().equals("Integer")) {
-				txtASampleData.appendText("{Index: " + (data.getIndex() + 1) + " ; Data: " + data.getDataInteger() + "} ");
-			} else {
-				txtASampleData.appendText("{Index: " + (data.getIndex() + 1) + " ; Data: " + data.getDataCharacter() + "} ");
+		if (!(MainFields3.getSamplingTechnique().equals("Stratified Sampling"))) {
+			for (Data data : MainFields3.getSamplingFrame()) {
+				if (MainFields3.getDataType().equals("Integer")) {
+					txtASampleData.appendText("{Index: " + (data.getIndex() + 1) + " ; Data: " + data.getDataInteger() + "} ");
+				} else {
+					txtASampleData.appendText("{Index: " + (data.getIndex() + 1) + " ; Data: " + data.getDataCharacter() + "} ");
+				}
 			}
+		} else {
+			// display for stratified sample - this is already grouped to stratas
 		}
 	}
 	
