@@ -8,6 +8,5 @@
    <children>
       <TextField fx:id="txtFSampleData" layoutX="17.0" layoutY="32.0" prefHeight="25.0" prefWidth="385.0" promptText="Enter Data" />
       <Button fx:id="btnAddItem" layoutX="138.0" layoutY="77.0" mnemonicParsing="false" onAction="#addItemClick" prefHeight="25.0" prefWidth="133.0" text="Add Item" />
-      <Button fx:id="btnConfirmSampleData" layoutX="113.0" layoutY="115.0" mnemonicParsing="false" onAction="#confirmSampleDataClick" prefHeight="25.0" prefWidth="184.0" text="Confirm" />
    </children>
 </AnchorPane>

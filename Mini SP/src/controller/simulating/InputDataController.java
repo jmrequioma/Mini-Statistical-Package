@@ -24,8 +24,6 @@ public class InputDataController {
 	private TextField txtFSampleData;
 	@FXML
 	private Button btnAddItem;
-	@FXML
-	private Button btnConfirmSampleData;
 	final int MIN = 25;
 	private int index = 0;
 	private List<Data> samplingFrame = new ArrayList<Data>();
@@ -80,11 +78,6 @@ public class InputDataController {
 			stage.setScene(scene);
 			stage.show();
 		}
-	}
-	// Event Listener on Button[#btnConfirmSampleData].onAction
-	@FXML
-	public void confirmSampleDataClick(ActionEvent event) throws IOException {
-		
 	}
 	
 	private boolean isInteger(String text) {

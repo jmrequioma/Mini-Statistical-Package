@@ -107,6 +107,7 @@ public class OutputController {
 				if(sampleSize > 0 && sampleSize < 100) { 
 					Stratified stratified = new Stratified(samplingFrame, samplingFrame.size(), sampleSize, dataType);
 					List<List<Data>> randomData = stratified.getRandom();
+					txtADisplay.clear();
 					displayStratas(randomData);
 				} else {
 					Alert alert = new Alert(AlertType.ERROR);
