@@ -9,7 +9,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
@@ -82,6 +84,12 @@ public class IntroController implements Initializable {
     			    		}
     			        } else if (ke.getCode().equals(KeyCode.DIGIT4)) {
     			        	System.exit(0);
+    			        } else {
+    			        	Alert alert = new Alert(AlertType.ERROR);
+    						alert.setTitle("Critical Error");
+    						alert.setHeaderText("Invalid Key Pressed!!!");
+    						alert.setContentText("Ooops, key pressed is not one of the choices.");
+    						alert.showAndWait();
     			        }
     			    }
     			});
